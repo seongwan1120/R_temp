@@ -1,0 +1,159 @@
+---
+title: "0420_2"
+author: "Seongwan Jeong"
+date: "2023-04-20"
+output: html_document
+---
+# 01. 데이터프레임
+# 02. A: 관측값, B: 변수
+# 03. 
+```{r}
+x <- c(2, 4, 6, 8)
+y <- c(10, 12, 14, 16)
+z <- c(18, 20, 22, 24)
+m <- cbind(x, y, z)
+m
+
+matrix(c(2, 10, 18,
+         4, 12, 20,
+         6, 14, 22,
+         8, 16, 24),
+       nrow=4,byrow=T)
+
+matrix(c(2, 4, 6, 8,
+         10, 12, 14, 16,
+         18, 20, 22, 24),
+       ncol=3,byrow=F)
+```
+# 04.
+```{r}
+m <- matrix(c(9, 7, 5, 3,
+              8, 11, 2, 9),
+            nrow=2, byrow=T)
+rownames(m) <- c('x', 'y')
+colnames(m) <- c('a', 'b', 'c', 'd')
+m
+```
+# 05.
+```{r}
+# (1)
+t(m)
+
+# (2)
+df <- as.data.frame(m)
+
+# (3)
+info <- c(13, 14)
+df.new <- cbind(df, info)
+df.new
+
+# (4)
+class(df.new)
+
+```
+# 06.
+```{r}
+blood <- c('A', 'O', 'AB', 'B', 'B')
+rh <- c('+', '+', '-', '+', '+')
+age <- c(21, 30, 43, 17, 26)
+
+# (1)
+df <- data.frame(blood, rh, age)
+df
+
+# (2)
+colnames(df)
+
+# (3)
+df.nb <- subset(df, blood!='B')
+df.nb
+```
+# 07.
+```{r}
+# (1)
+dim(cars)
+
+# (2)
+colnames(cars)
+str(cars)
+```
+# 08.
+```{r}
+# (1) T
+matrix(1:12, nrow=3) %% 3
+
+# (2) T
+matrix(1:12, nrow=3) + 3
+
+# (3) F
+# matrix(1:12, nrow=3)+matrix(1:12, nrow=4)
+
+# (4) T
+matrix(1:12, nrow=3)+matrix(1:12, nrow=3)
+
+# (5) F
+# rbind(matrix(1:9, nrow=3), c('1', '2', '3'))+3
+```
+# 09.
+```{r}
+번호 <- c(1, 2, 3, 4, 5, 6, 7)
+제목 <- c('그대랑', '다툼', '빨래', '두통', '보조개', '매듭', '이상해')
+좋아요 <- c(16075, 8218, 12119, 738, 3200, 16144, 5110)
+
+# (1)
+love <- data.frame(번호, 제목, 좋아요)
+love
+
+# (2)
+best <- subset(love, 좋아요 == max(좋아요))
+best
+```
+# 11.
+
+```{r}
+# (1)
+class(cars)
+
+# (2)
+dim(cars)
+
+# (3)
+head(cars)
+
+# (4)
+str(cars)
+
+# (5)
+colMeans(cars)
+
+# (6)
+max(cars$dist)
+
+# (7)
+subset(cars, dist == max(dist))
+```
+# 12.
+```{r}
+# (1)
+is.matrix(InsectSprays)
+
+# (2)
+str(InsectSprays)
+
+# (3)
+tail(InsectSprays, 10)
+
+# (4)
+levels(InsectSprays$spray)
+
+# (5)
+table(InsectSprays$spray)
+
+# (6)
+InsectSprays.e <- subset(InsectSprays, spray == 'E')
+InsectSprays.e
+
+# (7)
+mean(InsectSprays.e$count)
+```
+

@@ -1,0 +1,32 @@
+---
+title: "Untitled"
+author: "정성완"
+date: "2023-04-18"
+output: html_document
+---
+## Q1.
+```{r}
+fruit <- c("사과", "딸기", "수박")
+price <- c(1800, 1500, 3000)
+volume <- c(24, 38, 13)
+
+df <- data.frame(fruit, price, volume); df
+```
+
+## Q2.
+```{r}
+mean(df$price)
+mean(df$volume)
+```
+
+## 추가 01.
+```{r}
+subscriber <- c(62, 32, 36, 29, 39, 44, 81)
+names(subscriber) <- c("sun", "mon", "tue", "wed", "thu", "fri", "sat")
+subscriber
+sum(subscriber)
+sum(subscriber[c("fri", "sat", "sun")])
+mean(subscriber)
+max(subscriber)
+```
+

@@ -1,0 +1,40 @@
+---
+title: "0417_2"
+author: "seongwan"
+date: "2023-04-17"
+output: html_document
+---
+# 문제1
+```{r 문제1}
+
+v1 <-  c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+v2 <- 2*v1
+max_v <- max(v2) ;max_v
+min_v <- min(v2) ;min_v
+avg_v <- mean(v2) ;avg_v
+sum_v <- sum(v2) ;sum_v
+v3 <- v2[-5] ;v3
+
+```
+# 문제2
+```{r 문제2}
+
+v4 <- seq(1, 9, 2) ;v4
+v5 <- rep(1, times=5) ;v5
+v6 <- rep(c(1, 2, 3), times=3) ;v6
+v7 <- rep(c("A", "B"), each=2) ;v7
+
+```
+# 문제3
+```{r 문제3}
+
+nums <- sample(1:100, 10, replace = F)
+nums[nums>50]
+which(nums<=50)
+which.max(nums)
+which.min(nums)
+sort(nums)
+sort(nums, decreasing=T)
+
+```
+
